@@ -1,7 +1,7 @@
 <h1 align="center">yommerce</h1>
 
 <p>
-  An e-commerce website that uses the api from [Fake Store API](https://fakestoreapi.com/), and also to fulfill the final independent study project.
+  An e-commerce website that uses the api from https://fakestoreapi.com/, and also to fulfill the final independent study project.
 </p>
 
 ## 🚀 Technology
