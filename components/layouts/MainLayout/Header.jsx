@@ -8,7 +8,6 @@ import { RiLogoutCircleRLine } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../../features/authSlice';
 import { useState } from 'react';
-import OutsideClickHandler from 'react-outside-click-handler';
 
 const Header = () => {
 	const user = useSelector(state => state.user.user);
@@ -26,15 +25,11 @@ const Header = () => {
 				<h3 className="text-xl md:text-2xl">
 					<Link href="/">yommerce</Link>
 				</h3>
-				<OutsideClickHandler onOutsideClick={() => setIsNavOpen(false)}>
-					<button className="group flex flex-col items-center justify-center space-y-1 md:hidden" onClick={() => setIsNavOpen(prev => !prev)}>
-						<div className={`${genericHamburgerLine} ${isNavOpen ? 'translate-y-2 rotate-45 group-hover:opacity-100' : 'group-hover:opacity-100'}`} />
-						<div className={`${genericHamburgerLine} ${isNavOpen ? 'opacity-0' : 'group-hover:opacity-100'}`} />
-						<div
-							className={`${genericHamburgerLine} ${isNavOpen ? '-translate-y-1 -rotate-45 group-hover:opacity-100' : 'group-hover:opacity-100'}`}
-						/>
-					</button>
-				</OutsideClickHandler>
+				<button className="group flex flex-col items-center justify-center space-y-1 md:hidden" onClick={() => setIsNavOpen(prev => !prev)}>
+					<div className={`${genericHamburgerLine} ${isNavOpen ? 'translate-y-2 rotate-45 group-hover:opacity-100' : 'group-hover:opacity-100'}`} />
+					<div className={`${genericHamburgerLine} ${isNavOpen ? 'opacity-0' : 'group-hover:opacity-100'}`} />
+					<div className={`${genericHamburgerLine} ${isNavOpen ? '-translate-y-1 -rotate-45 group-hover:opacity-100' : 'group-hover:opacity-100'}`} />
+				</button>
 				<div
 					className={`absolute top-14 right-0 w-full max-w-[10rem] flex-col items-center justify-center rounded-md bg-white p-5 shadow-lg md:static md:w-full md:max-w-none md:flex-row md:p-0 md:shadow-none ${
 						isNavOpen ? 'flex' : 'hidden'
